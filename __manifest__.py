@@ -12,7 +12,7 @@
         'account'
     ],
     'data': [
-        'views/account_account_view.xml'
+        'views/account_account_inherit_view.xml'
     ],
     'installable': True,
     'application': True,

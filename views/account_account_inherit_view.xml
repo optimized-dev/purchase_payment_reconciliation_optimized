@@ -13,6 +13,19 @@
         </field>
     </record>
 
+    <!-- Account Payment form view inherit -->
+<!--    <record id="view_account_payment_new_form_inherited" model="ir.ui.view">-->
+<!--            <field name="name">account.payment.form.new.inherited</field>-->
+<!--            <field name="model">account.payment</field>-->
+<!--            <field name="inherit_id" ref="account.view_account_payment_form" />-->
+<!--            <field name="arch" type="xml">-->
+<!--            <field name="payment_method_line_id" position="after">-->
+<!--                <field name="purchase_account_transfer" invisible="1"/>-->
+<!--            </field>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
     <record id="action_account_internal_purchase_payments_transfer" model="ir.actions.act_window">
         <field name="name">Internal Purchase Payment Transfers</field>
         <field name="res_model">account.payment</field>

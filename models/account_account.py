@@ -12,6 +12,8 @@ class AccountAccount(models.Model):
 class AccountPayment(models.Model):
     _inherit = "account.payment"
 
+    purchase_account_transfer = fields.Boolean(string="Purchase Transfer")
+
     @api.model
     def create(self, values):
         if 'is_internal_transfer' in values:
