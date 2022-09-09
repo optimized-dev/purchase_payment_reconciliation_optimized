@@ -19,8 +19,7 @@
         <field name="view_mode">tree,kanban,form,graph</field>
         <field name="context">{'default_payment_type': 'outbound',
             'search_default_transfers_filter': 1,
-            'default_is_internal_transfer': True,
-            'default_internal_purchase':True}</field>
+            'default_is_internal_transfer': True}</field>
         <field name="domain">[]</field>
         <field name="view_id" ref="account.view_account_supplier_payment_tree"/>
     </record>
