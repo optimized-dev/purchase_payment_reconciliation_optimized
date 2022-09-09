@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Invoice form view inherit -->
+    <record id="chart_of_accounts_form_inherit" model="ir.ui.view">
+        <field name="name">Chart of Accounts form inherit</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='allowed_journal_ids']" position="after">
+                <field name="purchase_reconciliation"/>
+                <field name="cash_limit" attrs="{'invisible': [('purchase_reconciliation', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_account_internal_purchase_payments_transfer" model="ir.actions.act_window">
+        <field name="name">Internal Purchase Payment Transfers</field>
+        <field name="res_model">account.payment</field>
+        <field name="view_mode">tree,kanban,form,graph</field>
+        <field name="context">{'default_payment_type': 'outbound',
+            'search_default_transfers_filter': 1,
+            'default_is_internal_transfer': True,
+            'default_internal_purchase':True}</field>
+        <field name="domain">[]</field>
+        <field name="view_id" ref="account.view_account_supplier_payment_tree"/>
+    </record>
+
+    <menuitem parent="account.menu_finance_payables" id="purchase_amount_internal_payment_transfer_menu" name="Purchase Internal Transaction" action="action_account_internal_purchase_payments_transfer" sequence="99"/>
+
+
+
+
+</odoo>
